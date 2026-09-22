@@ -401,6 +401,12 @@
   z-index: 40 !important;
 }
 
+/* Why: modals (z-50) lock body scroll; lift toasts above them so errors raised
+   from inside a dialog stay readable instead of blurred behind its overlay. */
+body[data-scroll-locked] [data-sonner-toaster] {
+  z-index: 60 !important;
+}
+
 [data-sonner-toaster] [data-sonner-toast][data-styled='true'] {
   align-items: flex-start;
   flex-wrap: wrap;
