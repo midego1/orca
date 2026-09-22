@@ -7,6 +7,7 @@ const dialogSource = fs.readFileSync(
   'utf8'
 )
 
+/** Returns the z-index declared by the first main.css rule matching `selectorPattern`. */
 function zIndexOf(selectorPattern: string): number {
   const match = mainCss.match(new RegExp(`${selectorPattern}\\s*{[^}]*z-index:\\s*(\\d+)`, 's'))
   expect(match, `no z-index rule for ${selectorPattern}`).not.toBeNull()
